@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ham" class="container align">
+        <div id="back" class="line back"></div>
+        <div id="escape" class="line escape"></div>
+        <div id="slash" class="line slash"></div>
+    </div>
+</body>
+<script>
+    document.getElementById("ham").onclick = function () {
+
+        var x = document.getElementById("back");
+        var y = document.getElementById("slash");
+        var z = document.getElementById("escape");
+        
+        x.classList.toggle("animation");
+        y.classList.toggle("animation");
+        z.classList.toggle("animation");
+    };
+
+    document.getElementById("ham").addEventListener("mouseenter",function(){
+
+        var h = document.getElementById("ham");
+        var x = document.getElementById("back");
+        var y = document.getElementById("slash");
+        var z = document.getElementById("escape");
+        
+        x.classList.add("space");
+        y.classList.add("space");
+        z.classList.add("space");
+
+        //h.classList.remove("align");
+
+    });
+
+    document.getElementById("ham").addEventListener("mouseleave",function(){
+
+        var h = document.getElementById("ham");
+        var x = document.getElementById("back");
+        var y = document.getElementById("slash");
+        var z = document.getElementById("escape");
+        
+        if (!x.classList.contains("animation")) {
+            x.classList.remove("space");
+            y.classList.remove("space");
+            z.classList.remove("space");
+
+            //h.classList.add("align");
+        } 
+    });
+</script>
+</html>
